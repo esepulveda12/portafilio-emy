@@ -32,3 +32,6 @@ next-env.d.ts
 
 # pista de música original (duplicado de lofi.mp3, ya incluido)
 public/music/Laputa*
+
+.vercel
+.env*

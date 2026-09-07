@@ -12,10 +12,14 @@ export default function Avatar({
   className = "",
   src = "/profile.png",
   contain = false,
+  position = "center",
 }: {
   className?: string;
   src?: string;
   contain?: boolean;
+  /** object-position en modo cover (default "center"). Súbela ("top") si el
+      encuadre recorta la frente en marcos chicos/circulares. */
+  position?: string;
 }) {
   const [error, setError] = useState(false);
 
@@ -49,8 +53,8 @@ export default function Avatar({
         alt="Emily Sepúlveda"
         fill
         sizes="(max-width: 768px) 85vw, 400px"
-        className={contain ? "object-contain object-bottom" : "object-cover object-center"}
-        style={edgeMask}
+        className={contain ? "object-contain object-bottom" : "object-cover"}
+        style={contain ? edgeMask : { objectPosition: position }}
         onError={() => setError(true)}
       />
     </div>

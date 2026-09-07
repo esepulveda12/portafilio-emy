@@ -25,9 +25,13 @@ export default function Contact() {
       <div className="mx-auto w-full max-w-5xl">
         <SectionHeading kicker={contact.kicker} title={contact.title} subtitle={contact.text} />
 
+        {/* min-w-0 en los hijos: sin esto, un grid item no se achica por
+            debajo del ancho de su contenido (default min-width: auto) — en
+            mobile la card del formulario se salía del viewport por la
+            derecha en vez de apilarse a ancho completo. */}
         <div className="grid gap-5 md:grid-cols-[0.9fr_1.1fr]">
           {/* PANEL IZQUIERDO: tarjeta de conexión */}
-          <Reveal>
+          <Reveal className="min-w-0">
             <div className="gradient-border relative flex h-full flex-col overflow-hidden rounded-3xl glass-strong p-6">
               <div className="absolute -right-12 -top-12 h-36 w-36 rounded-full bg-neon-pink/30 blur-3xl" />
 
@@ -97,7 +101,7 @@ export default function Contact() {
           </Reveal>
 
           {/* PANEL DERECHO: consola de mensaje */}
-          <Reveal delay={0.1}>
+          <Reveal delay={0.1} className="min-w-0">
             <div className="gradient-border relative h-full overflow-hidden rounded-3xl glass-strong">
               {/* Barra de título tipo ventana */}
               <div className="flex items-center gap-2 border-b border-white/10 px-4 py-3">

@@ -83,21 +83,34 @@ export default function RadialNav() {
             }}
             className="fixed inset-0 z-[60] grid place-items-center bg-ink/70 backdrop-blur-md"
           >
-            {/* Contenedor central (no cierra al hacer clic dentro) */}
-            <div
-              className="relative grid h-[360px] w-[360px] place-items-center"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {/* Ícono central */}
-              <motion.div
+            {/* Contenedor central. OJO: ya NO detiene la propagación del clic —
+                antes cualquier toque dentro de esta caja de 360x360 (incluso
+                en espacios vacíos o sobre el ícono central) quedaba atrapado
+                y solo cerraba tocando "afuera" de la caja. En mobile eso
+                dejaba ~15px a cada lado para acertar con el dedo: básicamente
+                imposible de cerrar. Ahora el ícono central es un botón de
+                cierre explícito, y cualquier otro toque en la caja que no
+                sea sobre un botón de sección burbujea al overlay y cierra. */}
+            <div className="relative grid h-[360px] w-[360px] place-items-center">
+              {/* Ícono central: tocarlo de nuevo cierra el menú (mismo gesto
+                  que lo abrió, así no hace falta descubrir "clic afuera"). */}
+              <motion.button
+                type="button"
+                onClick={() => {
+                  setOpen(false);
+                  playSound("close");
+                }}
+                aria-label={lang === "es" ? "Cerrar menú" : "Close menu"}
                 initial={{ scale: 0, rotate: -30 }}
                 animate={{ scale: 1, rotate: 0 }}
                 exit={{ scale: 0, rotate: 180, transition: { duration: 0.32, ease: "easeIn" } }}
                 transition={{ type: "spring", stiffness: 220, damping: 18 }}
+                whileHover={{ scale: 1.08 }}
+                whileTap={{ scale: 0.92 }}
                 className="relative z-10 grid h-28 w-28 place-items-center rounded-full glass-strong shadow-glow-lg"
               >
                 <PixelDiamond className="h-14 w-14" />
-              </motion.div>
+              </motion.button>
 
               {/* Texto hint */}
               <motion.p
@@ -148,16 +161,6 @@ export default function RadialNav() {
                 );
               })}
             </div>
-
-            {/* Pista para cerrar */}
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
-              className="absolute bottom-8 text-sm text-white/65"
-            >
-              {lang === "es" ? "Esc o clic afuera para cerrar" : "Esc or click outside to close"}
-            </motion.p>
           </motion.div>
         )}
       </AnimatePresence>

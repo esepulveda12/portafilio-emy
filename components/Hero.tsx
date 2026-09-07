@@ -140,6 +140,7 @@ export default function Hero() {
           <div className="absolute -inset-1 animate-[spin_22s_linear_infinite_reverse] rounded-full border border-neon-cyan/20" />
           <Avatar
             src="/profile-hero.png"
+            position="top"
             className="relative h-full w-full rounded-full shadow-glow ring-2 ring-neon-pink/50"
           />
         </motion.div>
@@ -241,14 +242,20 @@ export default function Hero() {
           >
             {c.ui.contactMe}
           </button>
-          <a
-            href="/cv?print=1"
-            target="_blank"
-            className="rounded-xl glass px-7 py-3.5 font-semibold text-white transition-colors hover:bg-white/10"
-          >
-            {c.ui.downloadCV}
-          </a>
         </motion.div>
+
+        {/* CV: tercer nivel — un link discreto, no compite con las dos acciones
+            principales (ver proyectos / contactar). */}
+        <motion.a
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6 }}
+          href="/cv?print=1"
+          target="_blank"
+          className="mt-3 text-sm font-medium text-white/60 underline-offset-4 transition-colors hover:text-white hover:underline"
+        >
+          {c.ui.downloadCV}
+        </motion.a>
 
         {/* Tira de stats reales — riqueza editorial */}
         <motion.div

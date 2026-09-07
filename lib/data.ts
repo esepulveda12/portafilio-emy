@@ -13,12 +13,12 @@ export const profile = {
   alias: "@esepulveda12",
   email: "emilysepulveda30personal@gmail.com",
   whatsapp: {
-    display: "+57 320 493 1664",
-    link: "https://wa.me/573204931664",
+    display: "+57 304 120 7710",
+    link: "https://wa.me/573041207710",
   },
   available: true,
   socials: [
-    { label: "WhatsApp", href: "https://wa.me/573204931664", icon: "whatsapp" },
+    { label: "WhatsApp", href: "https://wa.me/573041207710", icon: "whatsapp" },
     { label: "GitHub", href: "https://github.com/esepulveda12", icon: "github" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/emilysepulvedaing/", icon: "linkedin" },
     { label: "Email", href: "mailto:emilysepulveda30personal@gmail.com", icon: "mail" },
@@ -111,9 +111,15 @@ const projectsBase = [
 export type SkillLevel = "core" | "solid" | "familiar";
 export type Skill = { name: string; level: SkillLevel; emoji: string };
 export type SkillGroup = { key: string; title: string; skills: Skill[] };
+export type ProjectCaseStudy = {
+  problem: string;
+  approach: string;
+  result: string;
+};
 export type Project = {
   title: string;
   description: string;
+  caseStudy: ProjectCaseStudy;
   tags: string[];
   icon: string;
   iconColor: string;
@@ -255,31 +261,77 @@ const dictionaries = {
       demo: "Live demo",
       code: "Code",
       openProject: "Open project",
+      caseStudy: "View case study",
+      problem: "Problem",
+      approach: "Approach",
+      result: "Result",
+      close: "Close",
+      noPublicDemo: "Private project — no public demo.",
       items: [
         {
           title: "Mainsep",
           description:
             "A multi-page site for a fictional tech company, with a live chat widget and a virtual assistant (\"Sara\"). Covers a full service catalog — e-commerce, software development, blockchain consulting, UX/UI design, mobile apps and digital marketing — plus FAQ and contact sections.",
+          caseStudy: {
+            problem:
+              "A fictional tech company needed a credible multi-page site that could showcase a full service catalog and let visitors get quick answers without waiting on a human.",
+            approach:
+              "Built a multi-page React site with a virtual assistant (\"Sara\") and a live chat widget, structuring content around six service lines plus FAQ and contact.",
+            result:
+              "A cohesive, navigable site that demonstrates end-to-end frontend architecture and conversational UX in one build.",
+          },
         },
         {
           title: "KawaiiTube",
           description:
             "A retro music player with a kawaii aesthetic: song search, popular categories (Rock, Pop, Piano, Classical, K-Pop, Electronic) and Home / Favorites / Library navigation.",
+          caseStudy: {
+            problem:
+              "Needed a music-player demo that felt distinctive rather than a generic streaming-app clone, with real search and category browsing.",
+            approach:
+              "Designed a retro/kawaii visual language on top of a working player: song search, popular categories, and Home / Favorites / Library navigation.",
+            result:
+              "A playful, cohesive UI that shows I can pair a distinct visual identity with functional product navigation.",
+          },
         },
         {
           title: "Retro Pokédex",
           description:
             "A collectible album of the original 151 Pokémon, with type filters (fire, water, grass and more), a \"caught / remaining\" progress tracker, and pagination across the full set.",
+          caseStudy: {
+            problem:
+              "Wanted to practice consuming a public API well beyond a simple list — filtering, state and pagination across a real dataset of 151 entries.",
+            approach:
+              "Built a collectible-album UI with type filters, a caught/remaining progress tracker, and pagination across the full set.",
+            result:
+              "A responsive, filterable catalog that proves I can turn a public API into a genuinely usable browsing experience.",
+          },
         },
         {
           title: "Bit's Cake",
           description:
             "An e-commerce landing page for a bakery: a cake catalog with prices and a buy button, a \"why choose us\" section, an about section, and direct contact info.",
+          caseStudy: {
+            problem:
+              "A small bakery needed an online presence that could show its catalog and let customers reach out directly, without a full e-commerce backend.",
+            approach:
+              "Built an e-commerce-style landing page: cake catalog with prices and a buy button, a \"why choose us\" section, an about section and direct contact info.",
+            result:
+              "A conversion-focused landing page that balances visual appeal with a clear path to purchase or contact.",
+          },
         },
         {
           title: "Neo Chat AI",
           description:
             "A chat app with an integrated conversational AI model, live connection status and a clean messaging interface.",
+          caseStudy: {
+            problem:
+              "Wanted to explore real-time UX patterns around a conversational AI: connection state, message flow, and a clean interface that doesn't feel like a raw API demo.",
+            approach:
+              "Built a chat app with an integrated conversational AI model, a live connection-status indicator, and a clean, focused messaging interface.",
+            result:
+              "A working real-time chat surface that shows I can wire AI responses into a product-quality interface, not just a console log.",
+          },
         },
       ],
     },
@@ -386,7 +438,7 @@ const dictionaries = {
       { label: "Contacto", href: "#contacto" },
     ],
     testimonials: {
-      kicker: "kind words",
+      kicker: "buenas palabras",
       title: "Lo que dicen",
       subtitle: "De compañeros y clientes con quienes he trabajado.",
     },
@@ -405,7 +457,7 @@ const dictionaries = {
       location: "Bogotá, Colombia · Remoto",
     },
     about: {
-      kicker: "about me",
+      kicker: "conóceme",
       title: "Sobre mí",
       paragraphs: [
         "Soy Desarrolladora de Software Full Stack con formación en diseño UX/UI — me importa el punto exacto donde el código limpio se encuentra con una interfaz que de verdad funciona bien para las personas.",
@@ -433,7 +485,7 @@ const dictionaries = {
       },
     },
     skills: {
-      kicker: "my stack",
+      kicker: "mi stack",
       title: "Skills & Herramientas",
       subtitle: "Agrupado por dominio, sin porcentajes inventados — primero lo que uso a diario.",
       levels: { core: "Dominio", solid: "Sólido", familiar: "Familiar" },
@@ -497,43 +549,89 @@ const dictionaries = {
       ] as SkillGroup[],
     },
     projects: {
-      kicker: "my work",
+      kicker: "mi trabajo",
       title: "Proyectos destacados",
       subtitle: "Builds personales desplegados y en vivo — la idea, mi rol y lo que entregué.",
       enterprise: "Empresarial · privado",
       demo: "Demo en vivo",
       code: "Código",
       openProject: "Abrir proyecto",
+      caseStudy: "Ver caso de estudio",
+      problem: "Problema",
+      approach: "Enfoque",
+      result: "Resultado",
+      close: "Cerrar",
+      noPublicDemo: "Proyecto privado — sin demo pública.",
       items: [
         {
           title: "Mainsep",
           description:
             "Sitio multipágina para una empresa de tecnología ficticia, con widget de chat en vivo y asistente virtual (\"Sara\"). Incluye catálogo completo de servicios — e-commerce, desarrollo de software, consultoría blockchain, diseño UX/UI, apps móviles y marketing digital — además de preguntas frecuentes y contacto.",
+          caseStudy: {
+            problem:
+              "Una empresa de tecnología ficticia necesitaba un sitio multipágina creíble que mostrara un catálogo completo de servicios y resolviera dudas rápidas sin depender de un humano.",
+            approach:
+              "Construí un sitio multipágina en React con un asistente virtual (\"Sara\") y widget de chat en vivo, organizando el contenido en seis líneas de servicio más FAQ y contacto.",
+            result:
+              "Un sitio cohesionado y navegable que demuestra arquitectura frontend de punta a punta y UX conversacional en un solo build.",
+          },
         },
         {
           title: "KawaiiTube",
           description:
             "Reproductor de música retro con estética kawaii: buscador de canciones, categorías populares (Rock, Pop, Piano, Classical, K-Pop, Electronic) y navegación por Home, Favoritos y Biblioteca.",
+          caseStudy: {
+            problem:
+              "Necesitaba un demo de reproductor de música que se sintiera distintivo y no un clon genérico de una app de streaming, con búsqueda real y categorías navegables.",
+            approach:
+              "Diseñé un lenguaje visual retro/kawaii sobre un reproductor funcional: búsqueda de canciones, categorías populares y navegación Home / Favoritos / Biblioteca.",
+            result:
+              "Una UI juguetona y coherente que muestra que puedo combinar una identidad visual distintiva con navegación de producto funcional.",
+          },
         },
         {
           title: "Retro Pokédex",
           description:
             "Álbum coleccionable de los 151 Pokémon originales, con filtro por tipo (fuego, agua, planta y más), un sistema de progreso \"capturados / restantes\" y paginación sobre todo el set.",
+          caseStudy: {
+            problem:
+              "Quería practicar el consumo de una API pública más allá de una lista simple: filtros, estado y paginación sobre un dataset real de 151 elementos.",
+            approach:
+              "Construí una UI de álbum coleccionable con filtro por tipo, un tracker de progreso capturados/restantes y paginación sobre todo el set.",
+            result:
+              "Un catálogo responsivo y filtrable que demuestra que puedo convertir una API pública en una experiencia de navegación realmente usable.",
+          },
         },
         {
           title: "Bit's Cake",
           description:
             "Landing de e-commerce para una pastelería: catálogo de tortas con precio y botón de compra, sección \"por qué elegirnos\", sección \"sobre nosotros\" y contacto directo.",
+          caseStudy: {
+            problem:
+              "Una pastelería pequeña necesitaba presencia online que mostrara su catálogo y permitiera contacto directo, sin un backend completo de e-commerce.",
+            approach:
+              "Construí una landing estilo e-commerce: catálogo de tortas con precio y botón de compra, sección \"por qué elegirnos\", sección \"sobre nosotros\" y contacto directo.",
+            result:
+              "Una landing enfocada en conversión que equilibra atractivo visual con un camino claro hacia la compra o el contacto.",
+          },
         },
         {
           title: "Neo Chat AI",
           description:
             "Aplicación de chat con un modelo de IA conversacional integrado, estado de conexión en vivo y una interfaz de mensajería limpia.",
+          caseStudy: {
+            problem:
+              "Quería explorar patrones de UX en tiempo real alrededor de una IA conversacional: estado de conexión, flujo de mensajes y una interfaz limpia que no se sintiera como un demo crudo de API.",
+            approach:
+              "Construí una app de chat con un modelo de IA conversacional integrado, indicador de estado de conexión en vivo y una interfaz de mensajería limpia y enfocada.",
+            result:
+              "Una superficie de chat en tiempo real funcional que muestra que puedo conectar respuestas de IA a una interfaz de calidad de producto, no solo a un log de consola.",
+          },
         },
       ],
     },
     contact: {
-      kicker: "say hi",
+      kicker: "salúdame",
       title: "Trabajemos juntas",
       text: "Cuéntame tu idea o proyecto, o solo salúdame. Respondo rápido y con muchas ganas.",
       form: {
@@ -634,6 +732,7 @@ export function getContent(lang: Lang) {
     ...base,
     title: d.projects.items[i].title,
     description: d.projects.items[i].description,
+    caseStudy: d.projects.items[i].caseStudy,
   }));
 
   // La sección de testimonios solo aparece si hay testimonios reales cargados.

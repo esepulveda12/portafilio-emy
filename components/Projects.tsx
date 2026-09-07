@@ -3,10 +3,12 @@
 import { useRef, useState } from "react";
 import { type Project } from "@/lib/data";
 import { useContent } from "@/lib/i18n";
+import { useProjectDetail } from "@/lib/project-detail";
+import { playSound } from "@/lib/sound";
 import { FaLock } from "react-icons/fa6";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
-import { ExternalIcon, CodeIcon } from "./Icons";
+import { EyeIcon } from "./Icons";
 import ProjectIcon from "./ProjectIcon";
 
 function ProjectCard({
@@ -17,27 +19,29 @@ function ProjectCard({
 }: {
   project: Project;
   index: number;
-  labels: { enterprise: string; demo: string; code: string; openProject: string };
+  labels: { enterprise: string; caseStudy: string; openProject: string };
   featured?: boolean;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const [transform, setTransform] = useState("");
+  const { open } = useProjectDetail();
   // Muestra la preview solo si hay ruta y la imagen carga bien. Si falta el
   // archivo (404) o falla, onError la apaga y la card vuelve a su gradiente.
   const [showImage, setShowImage] = useState(Boolean(project.image));
 
-  // Link primario al que apunta TODA la card: demo en vivo si existe, si no el repo.
-  // Los proyectos privados (enterprise) no tienen link → la card NO es clickeable.
-  const primaryHref = project.link ?? project.repo;
-  // "Código" se muestra como acción secundaria solo si hay demo Y repo. Si solo
-  // hay repo, el repo ya es la acción primaria y no lo duplicamos.
-  const hasSecondaryRepo = Boolean(project.link && project.repo);
+  // Toda la card abre el case study in-site (problema/enfoque/resultado); el
+  // link a demo/código en vivo vive dentro del detalle, no en la card. Así el
+  // visitante entiende el proyecto antes de salir del portafolio, y los
+  // proyectos enterprise (sin link) también son consultables.
+  const openDetail = () => {
+    playSound("pop");
+    open(project);
+  };
 
-  // Tilt 3D según la posición del mouse (solo desktop, y solo si la card abre algo:
-  // no fingimos interacción donde no hay nada que consultar).
+  // Tilt 3D según la posición del mouse (solo desktop)
   const handleMove = (e: React.MouseEvent) => {
     const el = ref.current;
-    if (!el || !primaryHref || window.matchMedia("(pointer: coarse)").matches) return;
+    if (!el || window.matchMedia("(pointer: coarse)").matches) return;
     const rect = el.getBoundingClientRect();
     const px = (e.clientX - rect.left) / rect.width - 0.5;
     const py = (e.clientY - rect.top) / rect.height - 0.5;
@@ -69,8 +73,11 @@ function ProjectCard({
                 onError={() => setShowImage(false)}
                 className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
               />
-              {/* Velo para mantener el texto legible sobre la captura */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0612] via-[#0a0612]/85 to-[#0a0612]/55" />
+              {/* Velo para mantener el texto legible sobre la captura. Más oscuro
+                  arriba a propósito: ahí es donde vive el título/descripción de
+                  la card, y antes se veía competir con el propio contenido de
+                  la captura (su navbar/heading) por ser la zona más transparente. */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0612] via-[#0a0612]/92 to-[#0a0612]/85" />
             </>
           )}
 
@@ -83,16 +90,15 @@ function ProjectCard({
             />
           )}
 
-          {/* Stretched link: un solo patrón de interacción — toda la card abre el proyecto */}
-          {primaryHref && (
-            <a
-              href={primaryHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`${labels.openProject}: ${project.title}`}
-              className="absolute inset-0 z-10 rounded-3xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-neon-pink"
-            />
-          )}
+          {/* Stretched button: un solo patrón de interacción — toda la card abre el
+              case study in-site (funciona también para proyectos enterprise, que
+              no tienen link externo). */}
+          <button
+            type="button"
+            onClick={openDetail}
+            aria-label={`${labels.openProject}: ${project.title}`}
+            className="absolute inset-0 z-10 rounded-3xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-neon-pink"
+          />
 
           <div className="pointer-events-none relative flex h-full flex-col">
             <div className="mb-3 flex items-start justify-between gap-2">
@@ -116,9 +122,9 @@ function ProjectCard({
             </div>
 
             <h3
-              className={`font-display font-bold text-white transition-colors ${
-                primaryHref ? "group-hover:text-neon-pink" : ""
-              } ${featured ? "text-2xl" : "text-lg"}`}
+              className={`font-display font-bold text-white transition-colors group-hover:text-neon-pink ${
+                featured ? "text-2xl" : "text-lg"
+              }`}
             >
               {project.title}
             </h3>
@@ -141,44 +147,19 @@ function ProjectCard({
               ))}
             </div>
 
-            {/* Acción PRIMARIA grande y visible: mismo destino que toda la card.
-                Va sobre el stretched link (z-20) para recibir el clic directo.
-                Un solo patrón: el ojo ve el CTA, y el resto de la card abre lo mismo. */}
-            {primaryHref && (
-              <div className="pointer-events-auto relative z-20 mt-4 flex flex-col gap-2.5">
-                <a
-                  href={primaryHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-neon-pink to-neon-purple px-4 py-2.5 text-sm font-semibold text-white shadow-glow transition hover:scale-[1.02]"
-                >
-                  {project.link ? (
-                    <>
-                      <ExternalIcon className="h-4 w-4" />
-                      {labels.demo}
-                    </>
-                  ) : (
-                    <>
-                      <CodeIcon className="h-4 w-4" />
-                      {labels.code}
-                    </>
-                  )}
-                </a>
-
-                {/* Acción SECUNDARIA sutil: solo cuando hay demo Y repo */}
-                {hasSecondaryRepo && project.repo && (
-                  <a
-                    href={project.repo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 self-center text-xs font-medium text-white/70 underline-offset-4 transition hover:text-white hover:underline"
-                  >
-                    <CodeIcon className="h-3.5 w-3.5" />
-                    {labels.code}
-                  </a>
-                )}
-              </div>
-            )}
+            {/* Acción PRIMARIA: abre el case study in-site. Va sobre el stretched
+                button (z-20) para recibir el clic directo; mismo destino que
+                el resto de la card — un solo patrón de interacción. */}
+            <div className="pointer-events-auto relative z-20 mt-4">
+              <button
+                type="button"
+                onClick={openDetail}
+                className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-neon-pink to-neon-purple px-4 py-2.5 text-sm font-semibold text-white shadow-glow transition hover:scale-[1.02]"
+              >
+                <EyeIcon className="h-4 w-4" />
+                {labels.caseStudy}
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -213,8 +194,7 @@ export default function Projects() {
               index={i}
               labels={{
                 enterprise: projects.enterprise,
-                demo: projects.demo,
-                code: projects.code,
+                caseStudy: projects.caseStudy,
                 openProject: projects.openProject,
               }}
               featured={Boolean(project.featured)}

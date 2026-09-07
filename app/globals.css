@@ -67,6 +67,19 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.18);
   }
 
+  /* Oculta el scrollbar kawaii sin desactivar el scroll. Se usa en el
+     contenedor de vistas: ese contenedor siempre tiene un poco de overflow
+     (deja espacio para que el diamante/sonido/música no tapen el final del
+     contenido), y mostrar ahí la barra morada en secciones cortas se veía
+     como un scrollbar sin motivo aparente. */
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
   /* Texto con gradiente neón */
   .text-gradient {
     background: linear-gradient(120deg, #a855f7, #3b82f6, #22d3ee);

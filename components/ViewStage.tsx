@@ -98,7 +98,14 @@ export default function ViewStage() {
           animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
           exit={{ opacity: 0, scale: 1.05, filter: "blur(8px)" }}
           transition={{ duration: 0.4, ease: [0.22, 0.61, 0.36, 1] }}
-          className="h-full w-full overflow-y-auto overflow-x-hidden"
+          // pb-40 (160px): el botón más alto de la esquina (toggle de sonido)
+          // llega a 144px desde abajo — 160px deja ~16px de aire real y nada
+          // más, para que el contenido no quede detrás de él sin dejar un
+          // espacio muerto exagerado al final de cada sección.
+          // no-scrollbar: ese padding hace que TODAS las vistas tengan overflow
+          // aunque su contenido quepa justo — sin esto, el scrollbar kawaii
+          // aparecía en secciones cortas (Skills, Contacto) sin motivo real.
+          className="h-full w-full overflow-y-auto overflow-x-hidden pb-40 no-scrollbar"
         >
           <Active />
         </motion.div>

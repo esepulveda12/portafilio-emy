@@ -15,15 +15,18 @@ export default function SectionHeading({ kicker, title, subtitle }: Props) {
         </span>
       </Reveal>
       <Reveal delay={0.05}>
-        <h2 className="mt-3 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
+        <h2 className="mt-5 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
           <span className="title-underline text-gradient glow-text animate-gradient-x">
             {title}
           </span>
         </h2>
       </Reveal>
       {subtitle && (
+        // mt-5: la barra de .title-underline cuelga fuera del flujo normal
+        // (bottom: -0.35em vía ::after), así que un margen chico aquí hace que
+        // el subtítulo se monte encima de la barra en vez de quedar debajo.
         <Reveal delay={0.1}>
-          <p className="mt-2 text-sm text-white/60">{subtitle}</p>
+          <p className="mt-5 text-sm text-white/60">{subtitle}</p>
         </Reveal>
       )}
     </div>
