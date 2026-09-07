@@ -1,0 +1,17 @@
+📸 TU FOTO DE PERFIL
+=====================
+
+Ya está puesta: public/profile.png (con el fondo recortado/transparente).
+
+Para cambiarla:
+
+1. Copia tu foto nueva en la carpeta  public/  (esta misma)
+2. Nómbrala exactamente:  profile.png
+3. Recarga la página.
+
+Mientras no exista profile.png, se muestra el gatito kawaii 🐱 como respaldo
+(nunca se ve roto).
+
+Tip: una foto cuadrada (ej. 600x600) se ve mejor en la tarjeta.
+Si tu foto es .jpg, puedes nombrarla profile.png igual o avísame y
+cambio la extensión en components/Avatar.tsx.
