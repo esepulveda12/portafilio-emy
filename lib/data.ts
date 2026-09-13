@@ -157,8 +157,6 @@ const dictionaries = {
       viewProjects: "View projects",
       contactMe: "Contact me",
       downloadCV: "Download CV",
-      navHint: "Use the diamond or the ← → keys to navigate",
-      navHintMobile: "Swipe or tap the diamond to navigate",
       location: "Bogotá, Colombia · Remote",
     },
     about: {
@@ -183,7 +181,7 @@ const dictionaries = {
           { k: "Role", v: "Full Stack Developer Jr · QA Automation" },
           { k: "Location", v: "Bogotá, Colombia · Remote" },
           { k: "Experience", v: "1+ year professional" },
-          { k: "Languages", v: "Spanish (native), English (basic)" },
+          { k: "Languages", v: "Spanish (native), English (intermediate)" },
           { k: "Focus", v: "React · Node.js · Python · .NET · Selenium/Playwright" },
           { k: "Email", v: "emilysepulveda30personal@gmail.com" },
         ],
@@ -375,7 +373,7 @@ const dictionaries = {
         languages: "Languages",
         certifications: "Certifications",
       },
-      languages: ["Spanish (native)", "English (basic)"],
+      languages: ["Spanish (native)", "English (intermediate)"],
       experience: [
         {
           role: "Full Stack Developer Jr",
@@ -412,6 +410,7 @@ const dictionaries = {
       ],
       education: [
         { title: "Software Engineering", place: "Corporación Universitaria Iberoamericana", period: "Graduated, Apr 2025" },
+        { title: "Technologist in Software Analysis and Development", place: "SENA", period: "2022" },
       ],
       certifications: [
         "JavaScript Course — Platzi",
@@ -452,8 +451,6 @@ const dictionaries = {
       viewProjects: "Ver proyectos",
       contactMe: "Contáctame",
       downloadCV: "Descargar CV",
-      navHint: "Usa el diamante o las flechas ← → para navegar",
-      navHintMobile: "Desliza o toca el diamante para navegar",
       location: "Bogotá, Colombia · Remoto",
     },
     about: {
@@ -478,7 +475,7 @@ const dictionaries = {
           { k: "Rol", v: "Full Stack Developer Jr · QA Automation" },
           { k: "Ubicación", v: "Bogotá, Colombia · Remoto" },
           { k: "Experiencia", v: "+1 año profesional" },
-          { k: "Idiomas", v: "Español (nativo), Inglés (básico)" },
+          { k: "Idiomas", v: "Español (nativo), Inglés (intermedio)" },
           { k: "Enfoque", v: "React · Node.js · Python · .NET · Selenium/Playwright" },
           { k: "Email", v: "emilysepulveda30personal@gmail.com" },
         ],
@@ -670,7 +667,7 @@ const dictionaries = {
         languages: "Idiomas",
         certifications: "Certificaciones",
       },
-      languages: ["Español (nativo)", "Inglés (básico)"],
+      languages: ["Español (nativo)", "Inglés (intermedio)"],
       experience: [
         {
           role: "Full Stack Developer Jr",
@@ -707,6 +704,7 @@ const dictionaries = {
       ],
       education: [
         { title: "Ingeniería de Software", place: "Corporación Universitaria Iberoamericana", period: "Graduada, Abr 2025" },
+        { title: "Tecnólogo en Análisis y Desarrollo de Software", place: "SENA", period: "2022" },
       ],
       certifications: [
         "Curso de JavaScript — Platzi",

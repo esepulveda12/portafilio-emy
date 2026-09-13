@@ -8,7 +8,6 @@ import MusicPlayer from "@/components/MusicPlayer";
 import RadialNav from "@/components/RadialNav";
 import LoadingScreen from "@/components/LoadingScreen";
 import KonamiEasterEgg from "@/components/KonamiEasterEgg";
-import NavHintToast from "@/components/NavHintToast";
 import SoundToggle from "@/components/SoundToggle";
 import SoundFX from "@/components/SoundFX";
 import ProjectDetail from "@/components/ProjectDetail";
@@ -28,7 +27,6 @@ export default function Home() {
         <ViewStage />
         <MusicPlayer />
         <RadialNav />
-        <NavHintToast />
         <KonamiEasterEgg />
         <SoundToggle />
         <SoundFX />

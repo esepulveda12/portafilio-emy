@@ -4,7 +4,6 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useContent, useLang } from "@/lib/i18n";
 import { useView, type ViewId } from "@/lib/view";
-import Logo from "./Logo";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -26,7 +25,10 @@ export default function Navbar() {
     >
       <nav className="flex w-full max-w-5xl items-center justify-between rounded-2xl glass-strong px-5 py-3 shadow-glass">
         <button onClick={() => nav("#inicio")} className="group transition-transform hover:scale-105">
-          <Logo className="h-14 w-auto" />
+          <span className="font-display text-2xl font-extrabold tracking-tight">
+            <span className="text-white">emy</span>
+            <span className="text-gradient glow-text">.dev</span>
+          </span>
         </button>
 
         {/* Links desktop */}

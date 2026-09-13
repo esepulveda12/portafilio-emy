@@ -100,12 +100,16 @@ export default function ViewStage() {
           transition={{ duration: 0.4, ease: [0.22, 0.61, 0.36, 1] }}
           // pb-40 (160px): el botón más alto de la esquina (toggle de sonido)
           // llega a 144px desde abajo — 160px deja ~16px de aire real y nada
-          // más, para que el contenido no quede detrás de él sin dejar un
-          // espacio muerto exagerado al final de cada sección.
+          // más, para que el contenido no quede detrás de él. Se salta en
+          // "inicio": ahí lo último es el marquee decorativo (nada
+          // interactivo que proteger), y ese padding dejaba un espacio
+          // muerto notorio justo después de la barra que se mueve.
           // no-scrollbar: ese padding hace que TODAS las vistas tengan overflow
           // aunque su contenido quepa justo — sin esto, el scrollbar kawaii
           // aparecía en secciones cortas (Skills, Contacto) sin motivo real.
-          className="h-full w-full overflow-y-auto overflow-x-hidden pb-40 no-scrollbar"
+          className={`h-full w-full overflow-y-auto overflow-x-hidden no-scrollbar ${
+            view === "inicio" ? "" : "pb-40"
+          }`}
         >
           <Active />
         </motion.div>
