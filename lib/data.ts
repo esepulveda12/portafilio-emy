@@ -1,4 +1,4 @@
-﻿// ============================================================
+// ============================================================
 //  ✦ EDITA TU INFORMACIÓN AQUÍ · EDIT YOUR INFO HERE ✦
 //  Contenido bilingüe (EN/ES). Lo neutral (email, redes, links,
 //  niveles, emojis) va una sola vez; lo textual va en ambos idiomas.
@@ -165,7 +165,7 @@ const dictionaries = {
       paragraphs: [
         "I'm a Full Stack Software Developer with a background in UX/UI design — I care about the exact point where clean code meets an interface that actually works well for people.",
         "I build with React, Node.js, Python, C#/.NET and MongoDB, and I automate testing with Selenium and Playwright to keep what I ship reliable — I also design and prototype in Figma. I'm currently focused on QA Automation and exploring Generative AI to build test-automation agents.",
-        "Alongside my full-time role, I work as a freelance developer and designer, building Flutter mobile apps and Figma UI/UX designs for international clients — which taught me to manage projects end to end and adapt quickly to different clients and stacks.",
+        "Before moving into full-time development, I worked as a freelance developer and designer, building Flutter mobile apps and Figma UI/UX designs for international clients — which taught me to manage projects end to end and adapt quickly to different clients and stacks.",
         "I'm always learning: from JavaScript and web development courses to a diploma in enterprise web development and hands-on test-automation training.",
       ],
       stats: [
@@ -400,7 +400,7 @@ const dictionaries = {
         {
           role: "Freelance Developer & Designer",
           company: "Fiverr",
-          period: "2023 — Present",
+          period: "2023 — 2025",
           bullets: [
             "5.0/5 rating across 6 reviews from clients in Colombia, Spain, Mexico and Uruguay, including a recurring collaboration.",
             "Built a cross-platform mobile app (iOS and Android) end to end with Flutter and Dart.",
@@ -459,7 +459,7 @@ const dictionaries = {
       paragraphs: [
         "Soy Desarrolladora de Software Full Stack con formación en diseño UX/UI — me importa el punto exacto donde el código limpio se encuentra con una interfaz que de verdad funciona bien para las personas.",
         "Construyo con React, Node.js, Python, C#/.NET y MongoDB, y automatizo pruebas con Selenium y Playwright para que lo que entrego sea confiable — también diseño y prototipo en Figma. Ahora mismo estoy enfocada en QA Automation y explorando Inteligencia Artificial Generativa para crear agentes de automatización de pruebas.",
-        "Además de mi rol de tiempo completo, trabajo como desarrolladora y diseñadora freelance, construyendo apps móviles en Flutter y diseños UI/UX en Figma para clientes internacionales, lo que me enseñó a gestionar proyectos de punta a punta y a adaptarme rápido a distintos clientes y stacks.",
+        "Antes de dedicarme al desarrollo de tiempo completo, trabajé como desarrolladora y diseñadora freelance, construyendo apps móviles en Flutter y diseños UI/UX en Figma para clientes internacionales, lo que me enseñó a gestionar proyectos de punta a punta y a adaptarme rápido a distintos clientes y stacks.",
         "Siempre estoy aprendiendo: desde cursos de JavaScript y desarrollo web hasta un diplomado en desarrollo web empresarial y formación práctica en automatización de pruebas.",
       ],
       stats: [
@@ -694,7 +694,7 @@ const dictionaries = {
         {
           role: "Desarrolladora y Diseñadora Freelance",
           company: "Fiverr",
-          period: "2023 — Actual",
+          period: "2023 — 2025",
           bullets: [
             "Calificación de 5,0/5 en 6 reseñas de clientes en Colombia, España, México y Uruguay, incluida una colaboración recurrente.",
             "Desarrollé de punta a punta una app móvil multiplataforma (iOS y Android) en Flutter y Dart.",
