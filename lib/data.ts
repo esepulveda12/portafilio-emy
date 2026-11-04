@@ -157,7 +157,7 @@ const dictionaries = {
       viewProjects: "View projects",
       contactMe: "Contact me",
       downloadCV: "Download CV",
-      location: "Bogotá, Colombia · Remote",
+      location: "Bogotá, Colombia · Remote or hybrid",
     },
     about: {
       kicker: "about me",
@@ -179,7 +179,7 @@ const dictionaries = {
         availability: "Available for work",
         rows: [
           { k: "Role", v: "Full Stack Developer Jr · QA Automation" },
-          { k: "Location", v: "Bogotá, Colombia · Remote" },
+          { k: "Location", v: "Bogotá, Colombia · Remote or hybrid" },
           { k: "Experience", v: "1+ year professional" },
           { k: "Languages", v: "Spanish (native), English (intermediate)" },
           { k: "Focus", v: "React · Node.js · Python · .NET · Selenium/Playwright" },
@@ -453,7 +453,7 @@ const dictionaries = {
       viewProjects: "Ver proyectos",
       contactMe: "Contáctame",
       downloadCV: "Descargar CV",
-      location: "Bogotá, Colombia · Remoto",
+      location: "Bogotá, Colombia · Remoto o híbrido",
     },
     about: {
       kicker: "conóceme",
@@ -475,7 +475,7 @@ const dictionaries = {
         availability: "Disponible para trabajar",
         rows: [
           { k: "Rol", v: "Full Stack Developer Jr · QA Automation" },
-          { k: "Ubicación", v: "Bogotá, Colombia · Remoto" },
+          { k: "Ubicación", v: "Bogotá, Colombia · Remoto o híbrido" },
           { k: "Experiencia", v: "+1 año profesional" },
           { k: "Idiomas", v: "Español (nativo), Inglés (intermedio)" },
           { k: "Enfoque", v: "React · Node.js · Python · .NET · Selenium/Playwright" },
