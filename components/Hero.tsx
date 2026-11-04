@@ -52,23 +52,23 @@ export default function Hero() {
         <motion.div
           animate={{ scale: [1, 1.1, 1], opacity: [0.6, 0.9, 0.6] }}
           transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute left-1/2 top-1/2 h-[88%] w-[52%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-neon-pink/25 blur-[120px]"
+          className="absolute left-[57%] top-1/2 h-[88%] w-[52%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-neon-pink/25 blur-[120px]"
         />
         <motion.div
           animate={{ scale: [1, 1.22, 1], opacity: [0.5, 0.85, 0.5] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute left-[58%] top-[22%] h-52 w-52 rounded-full bg-neon-cyan/25 blur-[80px]"
+          className="absolute left-[65%] top-[22%] h-52 w-52 rounded-full bg-neon-cyan/25 blur-[80px]"
         />
         {/* Anillos grandes girando — calmados y en capas */}
-        <div className="absolute left-1/2 top-1/2 h-[42rem] w-[42rem] -translate-x-1/2 -translate-y-1/2 animate-[spin_28s_linear_infinite] rounded-full border border-dashed border-neon-pink/25" />
-        <div className="absolute left-1/2 top-1/2 h-[34rem] w-[34rem] -translate-x-1/2 -translate-y-1/2 animate-[spin_36s_linear_infinite_reverse] rounded-full border border-neon-cyan/15" />
-        <div className="absolute left-1/2 top-1/2 h-[50rem] w-[50rem] -translate-x-1/2 -translate-y-1/2 animate-[spin_50s_linear_infinite] rounded-full border border-white/[0.05]" />
+        <div className="absolute left-[57%] top-1/2 h-[42rem] w-[42rem] -translate-x-1/2 -translate-y-1/2 animate-[spin_28s_linear_infinite] rounded-full border border-dashed border-neon-pink/25" />
+        <div className="absolute left-[57%] top-1/2 h-[34rem] w-[34rem] -translate-x-1/2 -translate-y-1/2 animate-[spin_36s_linear_infinite_reverse] rounded-full border border-neon-cyan/15" />
+        <div className="absolute left-[57%] top-1/2 h-[50rem] w-[50rem] -translate-x-1/2 -translate-y-1/2 animate-[spin_50s_linear_infinite] rounded-full border border-white/[0.05]" />
       </motion.div>
 
       {/* ===== Foto centrada, protagonista (desktop) ===== */}
       <motion.div
         style={{ y: photoY, opacity }}
-        className="pointer-events-none absolute inset-y-0 left-1/2 hidden w-[40%] max-w-[460px] -translate-x-1/2 lg:block"
+        className="pointer-events-none absolute bottom-0 left-[57%] top-24 hidden w-[38%] max-w-[440px] -translate-x-1/2 lg:block"
       >
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
