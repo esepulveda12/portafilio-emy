@@ -88,7 +88,7 @@ export default function CVPage() {
               "radial-gradient(circle at 88% 18%, rgba(168,85,247,0.28) 0%, transparent 45%), radial-gradient(circle at 12% 88%, rgba(34,211,238,0.22) 0%, transparent 42%), linear-gradient(125deg, #0a0612 0%, #1b0f33 48%, #120a1f 100%)",
           }}
         >
-          <Avatar className="h-[104px] w-[88px] shrink-0 rounded-2xl ring-2 ring-neon-pink/70 shadow-[0_0_22px_rgba(168,85,247,0.5)]" />
+          <Avatar className="h-[96px] w-[96px] shrink-0 rounded-fullring-2 ring-neon-pink/70 shadow-[0_0_22px_rgba(168,85,247,0.5)]" />
           <div className="relative">
             <h1 className="text-[30px] font-extrabold leading-tight text-white">{profile.name}</h1>
             <p className="mt-1.5 max-w-md text-[12.5px] font-medium leading-snug text-neon-lilac">{title}</p>

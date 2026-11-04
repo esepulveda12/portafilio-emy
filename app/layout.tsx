@@ -54,7 +54,7 @@ const personJsonLd = {
   "@type": "Person",
   name: "Emily Sepúlveda",
   url: "https://portafolioemily.vercel.app",
-  image: "https://portafolioemily.vercel.app/profile.webp",
+  image: "https://portafolioemily.vercel.app/profile-v2.png",
   jobTitle: "Full Stack Developer Jr · QA Automation",
   description:
     "Full Stack Developer with a QA Automation and UX/UI background. I build digital products end to end with React, Node.js, Python and .NET, and automate testing with Selenium and Playwright.",

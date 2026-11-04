@@ -51,10 +51,9 @@ export default function About() {
                 <div aria-hidden className="absolute inset-5 animate-[spin_38s_linear_infinite_reverse] rounded-full border border-neon-cyan/25" />
                 <div aria-hidden className="absolute -inset-3 animate-[spin_55s_linear_infinite] rounded-full border border-white/[0.06]" />
 
-                {/* Foto cutout flotando */}
+                {/* Foto circular (fondo ya difuminado en la imagen) */}
                 <Avatar
-                  contain
-                  className="relative z-10 h-[82%] w-[82%] drop-shadow-[0_10px_35px_rgba(168,85,247,0.4)]"
+                  className="relative z-10 h-[82%] w-[82%] rounded-full ring-2 ring-neon-pink/50 shadow-[0_10px_35px_rgba(168,85,247,0.4)]"
                 />
 
                 {/* Stats superpuestos — tarjetas flotantes en las esquinas */}

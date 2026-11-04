@@ -4,13 +4,13 @@ import Image from "next/image";
 import { useState } from "react";
 
 /**
- * Muestra la foto de perfil (/profile.png, fondo ya recortado) optimizada
+ * Muestra la foto de perfil (/profile-v2.png, circular con fondo difuminado) optimizada
  * con next/image. Si todavía no existe, cae elegantemente a un monograma.
- * Para cambiarla: reemplaza  public/profile.png
+ * Para cambiarla: reemplaza  public/profile-v2.png
  */
 export default function Avatar({
   className = "",
-  src = "/profile.png",
+  src = "/profile-v2.png",
   contain = false,
   position = "center",
 }: {
