@@ -380,10 +380,12 @@ const dictionaries = {
           company: "Identidad Tech",
           period: "Dec 2025 — Present",
           bullets: [
-            "Develop frontend and backend features for software applications, including APIs and services in C#/.NET.",
-            "Automate functional tests to ensure code quality.",
-            "Identify, diagnose and fix bugs in production and development.",
-            "Collaborate with the development team on continuous process improvement.",
+            "Develop and maintain end-to-end frontend and backend features for software applications in production.",
+            "Build and integrate APIs and services in C#/.NET that support the business's operational workflows.",
+            "Deploy to production through continuous integration and delivery (CI/CD) pipelines.",
+            "Automate functional tests to ensure code quality and stability before every release.",
+            "Diagnose and fix bugs in production and development.",
+            "Apply AI-assisted development tools, agents and MCPs to speed up delivery and automate processes.",
           ],
         },
         {
@@ -674,10 +676,12 @@ const dictionaries = {
           company: "Identidad Tech",
           period: "Dic 2025 — Actual",
           bullets: [
-            "Desarrollo de funcionalidades frontend y backend para aplicaciones de software, incluidas APIs y servicios en C#/.NET.",
-            "Automatización de pruebas funcionales para garantizar la calidad del código.",
-            "Identificación, diagnóstico y corrección de bugs en producción y desarrollo.",
-            "Colaboración con el equipo de desarrollo en la mejora continua de procesos.",
+            "Desarrollo y mantengo funcionalidades completas de frontend y backend para aplicaciones de software en producción.",
+            "Construyo e integro APIs y servicios en C#/.NET que soportan flujos operativos del negocio.",
+            "Despliego a producción mediante pipelines de integración y despliegue continuo (CI/CD).",
+            "Automatizo pruebas funcionales para garantizar la calidad y estabilidad del código antes de cada liberación.",
+            "Diagnostico y corrijo bugs en producción y desarrollo.",
+            "Aplico herramientas de desarrollo asistido por IA, agentes y MCPs para acelerar la entrega y automatizar procesos.",
           ],
         },
         {
