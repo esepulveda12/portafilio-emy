@@ -209,7 +209,7 @@ const dictionaries = {
           skills: [
             { name: "Node.js", level: "core", emoji: "🟢" },
             { name: "Python", level: "core", emoji: "🐍" },
-            { name: "C# / .NET", level: "solid", emoji: "💠" },
+            { name: "C# / .NET", level: "core", emoji: "💠" },
             { name: "PHP", level: "solid", emoji: "🐘" },
           ],
         },
@@ -380,7 +380,7 @@ const dictionaries = {
           company: "Identidad Tech",
           period: "Dec 2025 — Present",
           bullets: [
-            "Develop frontend and backend features for software applications.",
+            "Develop frontend and backend features for software applications, including APIs and services in C#/.NET.",
             "Automate functional tests to ensure code quality.",
             "Identify, diagnose and fix bugs in production and development.",
             "Collaborate with the development team on continuous process improvement.",
@@ -503,7 +503,7 @@ const dictionaries = {
           skills: [
             { name: "Node.js", level: "core", emoji: "🟢" },
             { name: "Python", level: "core", emoji: "🐍" },
-            { name: "C# / .NET", level: "solid", emoji: "💠" },
+            { name: "C# / .NET", level: "core", emoji: "💠" },
             { name: "PHP", level: "solid", emoji: "🐘" },
           ],
         },
@@ -674,7 +674,7 @@ const dictionaries = {
           company: "Identidad Tech",
           period: "Dic 2025 — Actual",
           bullets: [
-            "Desarrollo de funcionalidades frontend y backend para aplicaciones de software.",
+            "Desarrollo de funcionalidades frontend y backend para aplicaciones de software, incluidas APIs y servicios en C#/.NET.",
             "Automatización de pruebas funcionales para garantizar la calidad del código.",
             "Identificación, diagnóstico y corrección de bugs en producción y desarrollo.",
             "Colaboración con el equipo de desarrollo en la mejora continua de procesos.",
