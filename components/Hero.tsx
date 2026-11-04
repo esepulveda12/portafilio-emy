@@ -77,7 +77,7 @@ export default function Hero() {
           className="relative h-full w-full"
         >
           <Avatar
-            src="/profile-hero-v2.png"
+            src="/profile-hero-v3.png"
             contain
             className="h-full w-full drop-shadow-[0_10px_50px_rgba(168,85,247,0.28)]"
           />
@@ -139,7 +139,7 @@ export default function Hero() {
           <div className="absolute inset-0 animate-spin-slow rounded-full border border-dashed border-neon-pink/40" />
           <div className="absolute -inset-1 animate-[spin_22s_linear_infinite_reverse] rounded-full border border-neon-cyan/20" />
           <Avatar
-            src="/profile-hero-v2.png"
+            src="/profile-hero-v3.png"
             position="top"
             className="relative h-full w-full rounded-full shadow-glow ring-2 ring-neon-pink/50"
           />
